@@ -19,7 +19,7 @@
         <home-page></home-page>
     </v-main>
     <v-navigation-drawer
-        right
+
         v-model="drawer"
         absolute
         temporary
