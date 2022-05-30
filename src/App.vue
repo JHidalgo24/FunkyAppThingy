@@ -16,7 +16,7 @@
           </v-app-bar>
 
     <v-main app>
-        <home-page></home-page>
+        <router-view></router-view>
     </v-main>
     <v-navigation-drawer
 
@@ -60,12 +60,12 @@
 </template>
 
 <script>
-import homePage from "@/components/HomePage";
+import router from "@/routes";
+
 export default {
   name: 'App',
-
+  router,
   components: {
-    homePage,
 
   },
   data(){
