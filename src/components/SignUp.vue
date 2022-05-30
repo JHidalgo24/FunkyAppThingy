@@ -66,7 +66,7 @@
       </v-stepper-content>
 
       <v-stepper-content step="2">
-        <v-card class="mb-12" color="grey lighten-1" height="200px">
+        <v-card class="mb-12" color="grey lighten-3">
           <v-form>
             <v-container>
               <v-row>
