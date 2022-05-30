@@ -30,7 +30,9 @@
           <v-btn width="100%"  color="white" class="register" block text>Login</v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn  color="white" class="signups" block text> Sign-Up</v-btn>
+          <v-btn class="signups" block text>
+            <router-link style="text-decoration: none; color: white" to="/sign-up">Sign up</router-link>
+          </v-btn>
         </v-list-item>
       </v-list>
 
