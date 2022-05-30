@@ -4,7 +4,7 @@
     <v-parallax
         style="width: 100%; text-align: center;"
         height="400"
-        src="../assets/parallaximage.jpg"
+        src="./assets/parallaximage.jpg"
     >
       <h1>Tune into your soulmate</h1>
     </v-parallax>
