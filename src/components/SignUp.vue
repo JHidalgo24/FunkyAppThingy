@@ -24,11 +24,11 @@
           <v-form>
             <v-container>
               <v-row>
-                <v-col cols="6" md="4">
+                <v-col cols sm="12" lg="6">
                   <v-text-field color="indigo darken-3" label="First Name" required></v-text-field>
                 </v-col>
 
-                <v-col cols="6" md="4">
+                <v-col cols sm="12" lg="6">
                   <v-text-field color="indigo darken-3" label="Last Name" required></v-text-field>
                 </v-col>
               </v-row>
@@ -38,8 +38,8 @@
                   <v-text-field color="indigo darken-3" type="email" label="E-mail" required></v-text-field>
                 </v-col>
 
-                <v-col cols="6">
-                  <v-select :items="items" label="Standard" required></v-select>
+                <v-col cols sm="12" lg="6">
+                  <v-select :items="items" label="Gender" required></v-select>
                 </v-col>
               </v-row>
 
