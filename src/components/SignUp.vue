@@ -34,8 +34,8 @@
               </v-row>
 
               <v-row>
-                <v-col cols="6">
-                  <v-text-field color="indigo darken-3" label="E-mail" required></v-text-field>
+                <v-col cols  sm="12" lg="6">
+                  <v-text-field color="indigo darken-3" type="email" label="E-mail" required></v-text-field>
                 </v-col>
 
                 <v-col cols="6">
@@ -44,13 +44,12 @@
               </v-row>
 
               <v-row>
-                <v-col cols="6">
-                  <v-text-field color="indigo darken-3" label="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></v-text-field>
+                <v-col cols class="d-inline-flex" sm="12" lg="11">
+                  <v-text-field  color="indigo darken-3" label="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></v-text-field>
                 </v-col>
-
-                <v-col cols="6">
-                  <v-btn>
-                    <v-icon>mdi-account</v-icon> Spotify Login
+                <v-col sm="12" lg="1">
+                  <v-btn height="50px" class="" color="green" width="100%" >
+                    <v-icon>mdi-spotify</v-icon> Login
                   </v-btn>
                 </v-col>
               </v-row>
@@ -63,9 +62,7 @@
           Continue
         </v-btn>
 
-        <v-btn text>
-          Cancel
-        </v-btn>
+
       </v-stepper-content>
 
       <v-stepper-content step="2">
@@ -88,10 +85,6 @@
         <v-btn color="primary" @click="e1 = 3">
           Continue
         </v-btn>
-
-        <v-btn text>
-          Cancel
-        </v-btn>
       </v-stepper-content>
 
       <v-stepper-content step="3">
@@ -103,13 +96,8 @@
             </v-container>
           </v-form>
         </v-card>
-
         <v-btn color="primary" @click="e1 = 1">
           Continue
-        </v-btn>
-
-        <v-btn text>
-          Cancel
         </v-btn>
       </v-stepper-content>
     </v-stepper-items>
