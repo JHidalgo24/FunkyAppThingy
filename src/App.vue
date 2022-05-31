@@ -3,7 +3,7 @@
 
     <v-app-bar elevation="12" app>
       <v-icon color="rgb(67, 77, 127)">mdi-heart</v-icon>
-      <h2>Jiggy</h2>
+      <h2>Melody</h2>
       <v-spacer></v-spacer>
       <v-btn color="pink" dark @click.stop="drawer = !drawer" icon>
         <v-icon>mdi-menu</v-icon>
@@ -12,7 +12,6 @@
 
     <v-main app>
         <router-view></router-view>
-
     </v-main>
 
     <v-navigation-drawer v-model="drawer" app temporary color="white">
