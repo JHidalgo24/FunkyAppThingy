@@ -32,21 +32,14 @@
     <v-footer   color="black" >
       <v-row class="footer-items" >
         <v-col>
-          <h1>bullshit one</h1>
-        </v-col>
-        <v-col>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
 
         </v-col>
         <v-col>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
-          <h4>bullshit one</h4>
+          <h3 class="pa-5">Placeholder Footer &copy;</h3>
+
+        </v-col>
+        <v-col>
+
         </v-col>
       </v-row>
     </v-footer>
