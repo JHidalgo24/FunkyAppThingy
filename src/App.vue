@@ -15,7 +15,7 @@
 
     </v-main>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary color="white">
+    <v-navigation-drawer v-model="drawer" app temporary color="white">
       <v-list>
         <v-list-item>
           <v-btn width="100%"  color="white" class="register" block text>Login</v-btn>
