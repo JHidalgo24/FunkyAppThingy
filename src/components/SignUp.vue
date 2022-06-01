@@ -130,7 +130,7 @@
                           <v-text-field label="Genres You Hate"></v-text-field>
                         </v-col>
                         <v-col>
-                          <v-select :items="agerange" label="Age Range Preference"></v-select>
+                          <v-select :items="agerange" label="Age Preference"></v-select>
                         </v-col>
                       </v-row>
                     </v-container>
