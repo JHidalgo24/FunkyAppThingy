@@ -53,7 +53,7 @@
                         </v-col>
 
                         <v-col cols sm="12" lg="6">
-                          <v-alert class="text-center" icon="mdi-gender-transgender" elevation="12" text color="rgb(67, 77, 127)" v-if="transChoice !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
+                          <v-alert  class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="transChoice !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
                           <v-select v-if="transChoice === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
                         </v-col>
 
