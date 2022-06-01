@@ -20,7 +20,7 @@
           <v-btn width="100%"  color="white" class="register" block text>Login</v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn color="white" to="/sign-up" class="signups" block text>
+          <v-btn color="white" to="/sign-up" class="signups " block text>
             Sign up
           </v-btn>
         </v-list-item>
@@ -34,7 +34,7 @@
 
         </v-col>
         <v-col>
-          <h3 class="pa-5">Placeholder Footer &copy;</h3>
+          <h3 class="pa-5">Personal Project Please Don't Sue Image People &copy;</h3>
 
         </v-col>
         <v-col>
