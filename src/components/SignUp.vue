@@ -21,7 +21,7 @@
     <v-stepper-items>
 
         <v-stepper-content step="1">
-            <v-card class="mb-12" color="grey lighten-3">
+            <v-card class="mb-12" color="">
                 <v-form>
                     <v-container>
                         <v-row>
@@ -97,7 +97,7 @@
         </v-stepper-content>
 
         <v-stepper-content step="2">
-            <v-card class="mb-12" color="grey lighten-3">
+            <v-card elevation="0" class="mb-12" color="">
                 <v-form>
                     <v-container>
                         <v-row>
@@ -148,11 +148,11 @@
         </v-stepper-content>
 
         <v-stepper-content step="3">
-            <v-card class="mb-12" color="grey lighten-3">
+            <v-card elevation="0" class="mb-12" color="">
                 <v-form>
                     <v-container>
 
-                        <v-card>
+                        <v-card elevation="0">
                             <div class="d-flex">
                                 <v-img width="25%" src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Music-Listen-Headphone-Song-Avatar-Hobby-Happy-512.png"></v-img>
                                 <v-img width="25%" src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Woman-African-Avatar-Girl-Happy-Female-People-512.png"></v-img>
