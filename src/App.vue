@@ -2,8 +2,10 @@
   <v-app>
 
     <v-app-bar elevation="12" app>
-      <v-icon color="rgb(67, 77, 127)">mdi-heart</v-icon>
-      <h2>Melody</h2>
+      <a id="home-page" href="/" >
+        <v-icon color="rgb(67, 77, 127)">mdi-heart</v-icon>
+        <h2 >Melody</h2>
+      </a>
       <v-spacer></v-spacer>
       <v-btn color="pink" dark @click.stop="drawer = !drawer" icon>
         <v-icon>mdi-menu</v-icon>
@@ -89,6 +91,12 @@ v-app-bar{
 .footer-items{
   color: white;
   text-align: center;
+}
+#home-page{
+  text-decoration: none;
+  text-underline: none;
+  display: flex;
+  color:  rgb(67, 77, 127);
 }
 
 </style>
