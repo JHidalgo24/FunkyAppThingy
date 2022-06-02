@@ -19,7 +19,7 @@
     <v-navigation-drawer v-model="drawer" app temporary color="white">
       <v-list>
         <v-list-item>
-          <v-btn width="100%"  color="white" class="register" block text>Login</v-btn>
+          <v-btn width="100%" to="/login"  color="white" class="register" block text>Login</v-btn>
         </v-list-item>
         <v-list-item>
           <v-btn color="white" to="/sign-up" class="signups " block text>
@@ -32,16 +32,11 @@
     <!--footer that messes up the cards above-->
     <v-footer   color="black" >
       <v-row class="footer-items" >
-        <v-col>
 
-        </v-col>
         <v-col>
-          <h3 class="pa-5">Personal Project Please Don't Sue Image People &copy;</h3>
-
+          <h3 class="">Personal Project Please Don't Sue Image People &copy;</h3>
         </v-col>
-        <v-col>
 
-        </v-col>
       </v-row>
     </v-footer>
   </v-app>
