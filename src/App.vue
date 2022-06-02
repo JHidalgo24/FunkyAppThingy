@@ -16,17 +16,35 @@
         <router-view></router-view>
     </v-main>
 
-    <v-navigation-drawer v-model="drawer" app temporary color="white">
+    <v-navigation-drawer width="4rem" v-model="drawer" app temporary color="white">
       <v-list>
         <v-list-item>
-          <v-btn width="100%" to="/login"  color="white" class="register" block text>Login</v-btn>
+          <v-btn  to="/"  color="red"   icon><v-icon>mdi-home</v-icon></v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn color="white" to="/sign-up" class="signups " block text>
-            Sign up
-          </v-btn>
+          <v-btn  to="/profile"  color="orange darken-2"   icon><v-icon>mdi-account</v-icon></v-btn>
+        </v-list-item>
+        <v-list-item>
+          <v-btn  to="/dating"  color="yellow darken-2"   icon><v-icon>mdi-heart</v-icon></v-btn>
+        </v-list-item>
+        <v-list-item>
+          <v-btn  to="/messages"  color="green"   icon><v-icon>mdi-message</v-icon></v-btn>
         </v-list-item>
       </v-list>
+
+      <template v-slot:append>
+        <v-list>
+        <v-list-item>
+          <v-btn to="/login"  color="blue lighten-2"  icon><v-icon>mdi-login</v-icon></v-btn>
+        </v-list-item>
+        <v-list-item>
+          <v-btn  to="/sign-up" color="indigo"  icon>
+            <v-icon>mdi-clipboard-text</v-icon>
+          </v-btn>
+        </v-list-item>
+        </v-list>
+      </template>
+
     </v-navigation-drawer>
     <v-spacer></v-spacer>
     <!--footer that messes up the cards above-->
