@@ -16,7 +16,7 @@
     <h3>Age Preference</h3>
     <p>26-33</p>
     <h3>Average Rating</h3>
-    <p>Funky</p>
+    <p>2/5</p>
 
   </v-card>
 </v-container>
