@@ -50,15 +50,14 @@
 
 
     </v-navigation-drawer>
-    <v-divider></v-divider>
-    <!--footer that messes up the cards above-->
-    <v-footer app   color="gray" dark>
-      <v-row class="footer-items" >
 
+    <!--footer that messes up the cards above-->
+    <v-footer app   absolute  color="white" light>
+      <v-divider></v-divider>
+      <v-row class="text-center">
         <v-col>
           <h3 class="">Personal Project Please Don't Sue Image People &copy;</h3>
         </v-col>
-
       </v-row>
     </v-footer>
   </v-app>
