@@ -18,7 +18,7 @@
         <router-view></router-view>
     </v-main>
 
-    <v-navigation-drawer width="4rem" v-model="drawer" app temporary color="white">
+    <v-navigation-drawer right width="4rem" v-model="drawer" app temporary color="white">
       <v-list>
         <v-list-item>
           <v-btn  to="/profile"  color="orange darken-2"   icon><v-icon>mdi-account</v-icon></v-btn>
@@ -50,9 +50,9 @@
 
 
     </v-navigation-drawer>
-    <v-spacer></v-spacer>
+    <v-divider></v-divider>
     <!--footer that messes up the cards above-->
-    <v-footer   color="black" >
+    <v-footer app   color="gray" dark>
       <v-row class="footer-items" >
 
         <v-col>
