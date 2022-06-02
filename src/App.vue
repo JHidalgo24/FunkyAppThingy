@@ -1,11 +1,9 @@
 <template>
   <v-app>
 
-    <v-app-bar elevation="12" app>
+    <v-app-bar color="white" elevation="0" app>
       <a id="home-page" href="/" >
-
           <v-icon class="rainbow_text_animated">mdi-heart</v-icon>
-
         <h2>Melody</h2>
       </a>
       <v-spacer></v-spacer>
@@ -50,15 +48,12 @@
 
 
     </v-navigation-drawer>
-
+    <v-divider></v-divider>
     <!--footer that messes up the cards above-->
-    <v-footer app   absolute  color="white" light>
-      <v-divider></v-divider>
-      <v-row class="text-center">
-        <v-col>
-          <h3 class="">Personal Project Please Don't Sue Image People &copy;</h3>
-        </v-col>
-      </v-row>
+    <v-footer class="text-center" app  absolute  color="white" light>
+          <div>
+            <p>Personal Project Please Don't Sue Image People &copy;</p>
+          </div>
     </v-footer>
   </v-app>
 </template>

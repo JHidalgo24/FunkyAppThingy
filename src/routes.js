@@ -4,6 +4,7 @@ import SignUp from "@/components/SignUp";
 import HomePagePage from "@/views/HomePagePage";
 import UserLogin from "@/components/UserLogin";
 import datingPage from "@/components/DatingPage";
+import ProfileDescription from "@/components/ProfileDescription";
 
 Vue.use(VueRouter);
 
@@ -12,7 +13,8 @@ let routes = [
     { path: '/sign-up', component: SignUp, name:'Sign Up'},
     { path:'/home-page', component: HomePagePage},
     {path:'/login',component: UserLogin},
-    {path:'/dating',component: datingPage}
+    {path:'/dating',component: datingPage},
+    {path:'/profile',component: ProfileDescription}
 
 ]
 
