@@ -3,8 +3,10 @@
 
     <v-app-bar elevation="12" app>
       <a id="home-page" href="/" >
-        <v-icon color="rgb(67, 77, 127)">mdi-heart</v-icon>
-        <h2 >Melody</h2>
+
+          <v-icon class="rainbow_text_animated">mdi-heart</v-icon>
+
+        <h2>Melody</h2>
       </a>
       <v-spacer></v-spacer>
       <v-btn color="pink" dark @click.stop="drawer = !drawer" icon>
@@ -110,6 +112,35 @@ v-app-bar{
   text-underline: none;
   display: flex;
   color:  rgb(67, 77, 127);
+}
+
+/*Stolen thingy code pen*/
+
+
+.rainbow {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 5px;
+}
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
 }
 
 </style>
