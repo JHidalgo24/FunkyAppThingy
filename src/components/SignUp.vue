@@ -21,7 +21,7 @@
     <v-stepper-items>
 
         <v-stepper-content step="1">
-            <v-card class="mb-12" color="">
+            <v-card elevation="0" class="mb-12" color="">
                 <v-form>
                     <v-container>
                         <v-row>
@@ -79,8 +79,8 @@
                       </v-row>
 
                         <v-row>
-                            <v-col>
-                                <v-btn height="50px" class="" color="green" width="100%">
+                            <v-col >
+                                <v-btn  height="50px" class="" color="green" width="100%">
                                     <v-icon>mdi-spotify</v-icon> Login
                                 </v-btn>
                             </v-col>
