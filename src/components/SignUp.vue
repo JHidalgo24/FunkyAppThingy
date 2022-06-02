@@ -102,7 +102,7 @@
                     <v-container>
                         <v-row>
 
-                            <v-col cols lg="11" md="6">
+                            <v-col cols>
                                 <v-textarea color="indigo darken-3" label="About Yourself" required></v-textarea>
                             </v-col>
                         </v-row>
