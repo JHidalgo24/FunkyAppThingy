@@ -10,10 +10,9 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti enim hic perspiciatis quaerat quo, saepe voluptatum. Aut, consequatur, culpa cupiditate deserunt in labore minima molestias provident quis sint ut.</p>
       </v-card-text>
 
-      <v-btn  class="float-left ma-5" color="red" icon><v-icon>mdi-close-circle-outline</v-icon></v-btn>
-      <v-btn class="float-right ma-5" icon><v-icon class="rainbow_text_animated">mdi-heart</v-icon>
-
-      </v-btn>
+      <v-btn  class="float-left ma-5 rainbow_text_animated"  icon><v-icon>mdi-close-circle-outline</v-icon></v-btn>
+      <v-btn class="float-right ma-5" icon><v-icon class="rainbow_text_animated">mdi-heart</v-icon></v-btn>
+      <v-btn class="text-center ma-5" icon><v-icon class="rainbow_text_animated">mdi-spotify</v-icon></v-btn>
 
       </v-card>
     </v-col>
