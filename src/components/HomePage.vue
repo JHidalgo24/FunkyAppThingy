@@ -44,6 +44,47 @@
           </v-card>
         </v-col>
       </v-row>
+
+      <v-row>
+        <v-col cols sm="12" md="6" lg="6">
+          <v-img src="../assets/temp pics/peepo-juice-spin-pepojuicespin.gif"></v-img>
+        </v-col>
+
+        <v-col cols sm="12" md="6" lg="6">
+          <v-card elevation="2">
+            <v-card-title>How This Works</v-card-title>
+
+            <v-card-text>
+              This app will pair people up based on mutual music interests.
+              Simply enter the asked information when signing up, and you will
+              be on your way to meeting some great people. Not only are we
+              considerate to people's political views, but we also take
+              into consideration what you might want to present to people.
+              We do keep all of the information to ourselves. We do not
+              sell our user information. Scouts honor.
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col cols sm="12" md="6" lg="6">
+          <v-img src="../assets/temp pics/widepeepoHappy.png"></v-img>
+        </v-col>
+
+        <v-col cols sm="12" md="6" lg="6">
+          <v-card elevation="2">
+            <v-card-title>Thank You</v-card-title>
+
+            <v-card-text>
+              If you've made a feature or an idea, we thank you for this.
+              This is our first major app that we have worked on, and any
+              bit of help is greatly appreciated. It wouldn't be the same
+              without any one thought from you. :widepeepohappy:
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
