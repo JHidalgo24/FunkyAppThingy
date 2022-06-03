@@ -15,11 +15,11 @@
             <v-card-title>Why Join?</v-card-title>
 
             <v-card-text>
-              Let's be honest here, how many times has you gone out with someone
-              and everything is going great. Good food, having some laughs everything
-              is breezy, until they bust out some wack ass music. Im talking real wack,
-              like you can't get jiggy with it no more. Well, now you can put those moments
-              behind you.
+              Let's be honest here, how many times have you gone out with someone and everything is going great. Good
+              food,
+              having some laughs everything is breezy until they bust out some wack-ass music. I'm talking real wack
+              like you
+              can't get jiggy with it any more. Well, now you can put those moments behind you.
             </v-card-text>
           </v-card>
         </v-col>

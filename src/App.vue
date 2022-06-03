@@ -19,7 +19,7 @@
     <v-navigation-drawer right width="4rem" v-model="drawer" app temporary color="white">
       <v-list>
         <v-list-item>
-          <v-btn  to="/profile"  color="orange darken-2"   icon><v-icon>mdi-account</v-icon></v-btn>
+          <v-btn  to="/"  color="red"   icon><v-icon>mdi-home</v-icon></v-btn>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item>

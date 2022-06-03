@@ -112,6 +112,9 @@
                   <v-text-field label="Favorite Music Genre"></v-text-field>
                 </v-col>
                 <v-col>
+                  <v-text-field label="Favorite Artist"></v-text-field>
+                </v-col>
+                <v-col>
                   <v-select :items="genders" label="Preferred Dating Gender"></v-select>
                 </v-col>
               </v-row>
@@ -128,6 +131,9 @@
               <v-row>
                 <v-col>
                   <v-text-field label="Genres You Hate"></v-text-field>
+                </v-col>
+                <v-col>
+                  <v-text-field label="Hated Artist"></v-text-field>
                 </v-col>
                 <v-col>
                   <v-select :items="agerange" label="Age Preference"></v-select>

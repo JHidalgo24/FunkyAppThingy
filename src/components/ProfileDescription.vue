@@ -17,6 +17,8 @@
     <p>26-33</p>
     <h3>Average Rating</h3>
     <p>2/5</p>
+    <h3>Average Time on Melody in last 30 days</h3>
+    <p>3:23</p>
 
   </v-card>
 </v-container>

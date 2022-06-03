@@ -1,34 +1,69 @@
 <template>
-  <v-row class="ma-5 text-center">
-    <v-col></v-col>
 
-    <v-col class="d-inline-flex" cols lg="4" sm="12">
-      <v-card width="100%">
-      <v-card-title>User X</v-card-title>
-<v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Music-Listen-Headphone-Song-Avatar-Hobby-Happy-512.png"></v-img>      <v-card-text>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos iste nisi obcaecati officia quasi, quod vel. Accusamus debitis earum est iusto neque quia, repudiandae saepe sequi soluta suscipit totam, ut?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti enim hic perspiciatis quaerat quo, saepe voluptatum. Aut, consequatur, culpa cupiditate deserunt in labore minima molestias provident quis sint ut.</p>
+  <div>
+
+    <v-card  class="text-center" width="100%">
+      <div class="d-inline-flex">
+        <h3>User X</h3>
+
+      </div>
+      <v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Music-Listen-Headphone-Song-Avatar-Hobby-Happy-512.png"></v-img>
+      <v-btn class="text-center" icon><v-icon class="rainbow_text_animated">mdi-spotify</v-icon></v-btn>
+      <v-btn @click="userdis = !userdis" icon><v-icon class="rainbow_text_animated">mdi-orbit-variant</v-icon></v-btn>
+      <v-card-text v-if="userdis">
+        <h3>Preference</h3>
+        <p>Men & Women</p>
+        <h3>Gender</h3>
+        <p>Female</p>
+        <h3>Favorite Genre</h3>
+        <p>Pop</p>
+        <h3>Favorite Artist</h3>
+        <p>Ariana Grande</p>
+        <h3>Average Rating</h3>
+        <p>2/5</p>
+      </v-card-text>
+      <v-card-text v-else  color="green" width="100%">
+        <v-toolbar elevation="0" color="green">
+          X's Playlist
+        </v-toolbar>
+        <v-list elevation="0" :key="song" v-for="song in playlist">
+          <v-list-item >{{song}}</v-list-item>
+        </v-list>
       </v-card-text>
 
-      <v-btn  class="float-left ma-5 rainbow_text_animated"  icon><v-icon>mdi-close-circle-outline</v-icon></v-btn>
-      <v-btn class="float-right ma-5" icon><v-icon class="rainbow_text_animated">mdi-heart</v-icon></v-btn>
-      <v-btn class="text-center ma-5" icon><v-icon class="rainbow_text_animated">mdi-spotify</v-icon></v-btn>
+      <div id="action-buttons">
+        <v-btn class="float-left ma-5 " icon>
+          <v-icon class="rainbow_text_animated">mdi-close-circle</v-icon>
+        </v-btn>
+        <v-btn class="ma-5" icon>
+          <v-icon class="rainbow_text_animated">mdi-play-box</v-icon>
+        </v-btn>
+        <v-btn class="float-right ma-5" icon>
+          <v-icon class="rainbow_text_animated">mdi-heart</v-icon>
+        </v-btn>
+      </div>
 
-      </v-card>
-    </v-col>
-    <v-col></v-col>
-  </v-row>
+
+    </v-card>
+
+  </div>
+
 </template>
 
 <script>
 export default {
-  name: "DatingPage"
+  name: "DatingPage",
+  data(){
+    return{
+      playlist:['tune 1','tune 2','tune 3','tune 4','tune 5'],
+      userdis:true
+    }
+  }
 }
 </script>
 
 <style scoped>
 /*Stolen thingy code pen*/
-
 
 .rainbow {
   text-align: center;
@@ -37,8 +72,9 @@ export default {
   font-family: monospace;
   letter-spacing: 5px;
 }
+
 .rainbow_text_animated {
-  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -47,7 +83,9 @@ export default {
 }
 
 @keyframes rainbow_animation {
-  0%,100% {
+
+  0%,
+  100% {
     background-position: 0 0;
   }
 
@@ -55,5 +93,7 @@ export default {
     background-position: 100% 0;
   }
 }
-
+#action-buttons{
+  font-size: xx-large;
+}
 </style>
