@@ -7,6 +7,10 @@
     <v-container>
       <v-row>
         <v-col cols sm="12" md="6" lg="6">
+          <v-img src="../assets/temp pics/christmas part 2.jpg"></v-img>
+        </v-col>
+
+        <v-col cols sm="12" md="6" lg="6">
           <v-card elevation="2">
             <v-card-title>Why Join?</v-card-title>
 
@@ -18,6 +22,12 @@
               behind you.
             </v-card-text>
           </v-card>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col cols sm="12" md="6" lg="6">
+          <v-img src="../assets/temp pics/yes.jpg"></v-img>
         </v-col>
 
         <v-col cols sm="12" md="6" lg="6">

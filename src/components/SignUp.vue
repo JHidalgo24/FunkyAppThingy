@@ -26,17 +26,16 @@
           <v-form>
             <v-container>
               <v-row>
-                <v-col cols sm="12" lg="6">
+                <v-col cols sm="12" lg="4">
                   <v-text-field color="indigo darken-3" label="First Name" required></v-text-field>
                 </v-col>
 
-                <v-col cols sm="12" lg="6">
+                <v-col cols sm="12" lg="4">
                   <v-text-field color="indigo darken-3" label="Last Name" required></v-text-field>
                 </v-col>
               </v-row>
 
               <v-row>
-
                 <v-col cols sm="12" lg="6">
                   <v-text-field type="number" color="indigo darken-3" label="Age" required></v-text-field>
                 </v-col>
@@ -49,10 +48,10 @@
               <v-row>
 
                 <v-col cols sm="12" lg="6">
-
                   <v-select v-model="transChoice" :items="trans" label="Are you Trans?" required></v-select>
                 </v-col>
 
+<!--                fix this view on desktop-->
                 <v-col cols sm="12" lg="6">
                   <v-alert  class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="transChoice !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
                   <v-select v-if="transChoice === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>

@@ -23,9 +23,8 @@
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item>
-          <v-btn  to="/"  color="red"   icon><v-icon>mdi-home</v-icon></v-btn>
+          <v-btn  to="/profile"  color="orange darken-2"   icon><v-icon>mdi-account</v-icon></v-btn>
         </v-list-item>
-
         <v-list-item>
           <v-btn  to="/dating"  color="yellow darken-2"   icon><v-icon>mdi-heart</v-icon></v-btn>
         </v-list-item>
@@ -43,13 +42,9 @@
         </v-list-item>
       </v-list>
 
-
-
-
-
     </v-navigation-drawer>
     <v-divider></v-divider>
-    <!--footer that messes up the cards above-->
+
     <v-footer class="text-center" app  absolute  color="white" light>
           <div>
             <p>Personal Project Please Don't Sue Image People &copy;</p>
