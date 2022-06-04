@@ -1,18 +1,34 @@
-# new-app
+# TO-DO
 
-## Project setup
+## First Part
 ```
-npm install
+App Layout
+- Signup Page (Create another page for spotify based information)
+- Home Page
+- Profile Page/ Achievements 
+  on the bottom or tab
+- Pairing Page
+- Messages Page
+- Sign in Page 
 ```
 
-### Compiles and hot-reloads for development
+### Firebase and Account Creation
 ```
-npm run serve
+- Sign up 
+- Sign in
+- Uploading images
+- Displaying their images
+- Messaging 
+- Saving All of User Data to Firestore 
+- Saving Profile Achievements
 ```
 
-### Compiles and minifies for production
+### Spotify API 
 ```
-npm run build
+- Save their top genre to their firestore profile
+- Top song playing on profile or whatever they choose to play
+- Link their playlist to their profile or let them choose on account creation 
+
 ```
 
 ### Lints and fixes files

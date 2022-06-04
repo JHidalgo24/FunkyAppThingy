@@ -43,9 +43,9 @@
       </v-list>
 
     </v-navigation-drawer>
-    <v-divider></v-divider>
 
-    <v-footer class="text-center" app  absolute  color="white" light>
+
+    <v-footer class="text-center mt-12" app  absolute  color="white" light>
           <div>
             <p>Personal Project Please Don't Sue Image People &copy;</p>
           </div>
@@ -104,9 +104,6 @@ v-app-bar{
   display: flex;
   color:  rgb(67, 77, 127);
 }
-
-/*Stolen thingy code pen*/
-
 
 .rainbow {
   text-align: center;
