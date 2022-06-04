@@ -30,11 +30,3 @@ App Layout
 - Link their playlist to their profile or let them choose on account creation 
 
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
