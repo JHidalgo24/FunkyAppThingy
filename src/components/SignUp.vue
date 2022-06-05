@@ -53,18 +53,14 @@
               </v-row>
 
               <v-row>
-
                 <v-col cols sm="12" lg="6">
                   <v-select v-model="user.trans"  :items="trans" label="Are you Trans?" required></v-select>
                 </v-col>
 
-<!--                fix this view on desktop-->
                 <v-col cols sm="12" lg="6">
                   <v-alert  class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="user.trans !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
                   <v-select v-model="user.displayTrans" v-if="user.trans === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
                 </v-col>
-
-
               </v-row>
 
               <v-row>
@@ -108,7 +104,6 @@
           <v-form>
             <v-container>
               <v-row>
-
                 <v-col cols>
                   <v-textarea v-model="user.bio" color="indigo darken-3" label="About Yourself" required></v-textarea>
                 </v-col>
@@ -157,7 +152,6 @@
         <v-btn dark class="float-right" color="pink" @click="e1 = 3">
           Continue
         </v-btn>
-
       </v-stepper-content>
 
       <v-stepper-content step="3">
