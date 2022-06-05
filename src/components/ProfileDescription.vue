@@ -1,8 +1,8 @@
 <template>
 <v-container>
     <v-card elevation="0">
-        <h2 class="text-center">{{this.user}}</h2>
-        <v-btn @click="outputUser"></v-btn>
+        <h2 class="text-center">{{user}}</h2>
+        <v-btn @click="outputUser">Poopoo</v-btn>
         <v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Asian-Girl-Woman-Avatar-Smile-Happy-Female-512.png"></v-img>
         <h3>Preference</h3>
         <p>Men & Women</p>
@@ -36,19 +36,12 @@ export default {
     data() {
         return {
             authUser: null,
-            user: null
+          userInfo: null
         }
     },
     methods: {
         outputUser() {
-            console.log(this.user)
-        }
-    },
-    firestore: function () {
-        return {
-            user: db.collection('Users').doc(this.authUser.uid).get().then(c => {
-                console.log(c.data())
-            })
+          console.log(this.userInfo)
         }
     },
     beforeCreate: async function () {
@@ -59,7 +52,12 @@ export default {
                 this.authUser = null
             }
         })
-    }
+    },
+  firestore(){
+      return{
+        userInfo: db.collection('Users').doc(auth.currentUser.uid)
+      }
+  }
 
 }
 </script>

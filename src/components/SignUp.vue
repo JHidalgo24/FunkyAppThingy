@@ -237,6 +237,9 @@ export default {
                 console.log(c)
             })
             await auth.signInWithEmailAndPassword(this.user.email, this.user.password)
+            let willy = auth.currentUser
+            willy.displayName = this.user.firstName + ' ' + this.user.lastName
+            await auth.updateCurrentUser(willy)
             this.user.uid = auth.currentUser.uid
             this.user.userRating = 5
 

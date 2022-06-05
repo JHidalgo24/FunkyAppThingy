@@ -31,7 +31,7 @@ export default {
     name: "UserLogin",
     data() {
         return {
-            user: {
+            userLogin: {
                 email: '',
                 password: ''
             },
