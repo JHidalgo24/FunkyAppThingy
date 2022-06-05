@@ -12,9 +12,10 @@
     </v-app-bar>
 
     <v-main app>
-      <div v-if="showSignUpOrLogin === false">
+      <router-view :userID="authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
+      <div v-if="showSignUpOrLogin === false && authUser === null">
 <!--        <v-btn v-if="authUser === null" @click="signUp = !signUp"></v-btn>-->
-        <router-view :authUser="authUser" v-show="authUser !== null"></router-view>
+
         <v-container v-show="authUser === null && signUp === true"  >
           <v-stepper elevation="0" non-linear v-model="e1">
             <v-stepper-header>
@@ -74,7 +75,7 @@
 
                         <v-col cols sm="12" lg="6">
                           <v-alert class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="user.trans !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
-                          <v-select v-model="user.displayTrans" v-if="user.trans === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
+                          <v-select value="'N/A'" v-model="user.displayTrans" v-if="user.trans === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
                         </v-col>
                       </v-row>
 
@@ -222,9 +223,7 @@
           </v-stepper>
         </v-container>
       </div>
-
-
-      <div v-else-if="showSignUpOrLogin === true">
+      <div v-else-if="showSignUpOrLogin === true && authUser === null">
         <v-row class="ma-5">
           <v-col cols lg="3" sm="12"></v-col>
             <v-col cols lg="6" sm="12">
@@ -278,12 +277,7 @@
         </v-list-item>
         <v-divider ></v-divider>
         <v-list-item>
-          <v-btn to="/login"  color="blue lighten-2"  icon><v-icon>mdi-login</v-icon></v-btn>
-        </v-list-item>
-        <v-list-item>
-          <v-btn  to="/sign-up" color="indigo"  icon>
-            <v-icon>mdi-clipboard-text</v-icon>
-          </v-btn>
+          <v-btn to="/login"  color="blue darken-2"  icon><v-icon>mdi-logout</v-icon></v-btn>
         </v-list-item>
       </v-list>
 
@@ -328,7 +322,8 @@ export default {
       userLogin: {
         email: '',
         password: ''
-      }
+      },
+      userInfo:[]
 
     }
   },
@@ -340,7 +335,7 @@ export default {
       await auth.signInWithEmailAndPassword(this.user.email, this.user.password)
       this.user.uid = auth.currentUser.uid
       this.user.userRating = 5
-
+      this.user.displayTrans = this.user.trans === 'No' ? 'N/A' : this.user.displayTrans
       await db.collection('Users').doc(auth.currentUser.uid).set({
         user: Object.assign({}, this.user)
       })
