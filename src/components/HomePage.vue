@@ -80,7 +80,7 @@
                         If you've made a feature or an idea, we thank you for this.
                         This is our first major app that we have worked on, and any
                         bit of help is greatly appreciated. It wouldn't be the same
-                        without any one thought from you. :widepeepohappy:
+                        without any one thought from you.
                     </v-card-text>
                 </v-card>
             </v-col>

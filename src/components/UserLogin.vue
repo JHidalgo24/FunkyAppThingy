@@ -1,25 +1,26 @@
 <template>
-<v-row class="ma-5">
-    <v-col cols lg="3" sm="12"></v-col>
-    <v-col cols lg="6" sm="12">
+  <v-container>
+    <v-row class="ma-5">
+      <v-col cols lg="3" sm="12"></v-col>
+      <v-col cols lg="6" sm="12">
         <v-card class=" text-center" elevation="0" width="100%">
-            <h2 v-show="authUser === null">Sign-In</h2>
-            <h2 v-show="authUser !== null">Sign-Out</h2>
-            <v-card-text v-show="authUser === null">
-                <v-text-field v-model="userLogin.email" label="Email" type="email"></v-text-field>
-                <v-text-field v-model="userLogin.password" label="Password" type="password"></v-text-field>
-                <v-btn @click="loginWithEmail" class="ma-5" color="pink">Login</v-btn>
-                <br>
-                <router-link to="/password-reset">Forgot Password</router-link>
-            </v-card-text>
-            <v-card-text v-show="authUser !== null">
-                <v-btn @click="logOut" class="ma-5" color="pink">Log Out</v-btn>
-            </v-card-text>
+          <h2 v-show="authUser === null">Sign-In</h2>
+          <h2 v-show="authUser !== null">Sign-Out</h2>
+          <v-card-text v-show="authUser === null">
+            <v-text-field v-model="userLogin.email" label="Email" type="email"></v-text-field>
+            <v-text-field v-model="userLogin.password" label="Password" type="password"></v-text-field>
+            <v-btn @click="loginWithEmail" class="ma-5" color="pink">Login</v-btn>
+            <br>
+            <router-link to="/password-reset">Forgot Password</router-link>
+          </v-card-text>
+          <v-card-text v-show="authUser !== null">
+            <v-btn @click="logOut" class="ma-5" color="pink">Log Out</v-btn>
+          </v-card-text>
         </v-card>
-    </v-col>
-    <v-col cols lg="3" sm="12"></v-col>
-
-</v-row>
+      </v-col>
+      <v-col cols lg="3" sm="12"></v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
