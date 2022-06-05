@@ -1,11 +1,11 @@
 <template>
 <v-container>
     <v-card elevation="0">
-        <h2 class="text-center">{{user}}</h2>
-        <v-btn @click="outputUser">Poopoo</v-btn>
+        <h2 class="text-center">{{userInfo.user}}</h2>
+        <v-btn @click="outputUser">Output to Console</v-btn>
         <v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Asian-Girl-Woman-Avatar-Smile-Happy-Female-512.png"></v-img>
         <h3>Preference</h3>
-        <p>Men & Women</p>
+        <p>{{  }}</p>
         <h3>Gender</h3>
         <p>Female</p>
         <h3>Favorite Genre</h3>
@@ -25,18 +25,19 @@
 
 <script>
 import {
-    auth,
-    db
+    auth
 } from "@/firebase/firebase";
 import User from "@/models/User";
 
 export default {
     name: "ProfileDescription",
-
+  props:{
+      userInfo:{required:true}
+  }
+,
     data() {
         return {
-            authUser: null,
-          userInfo: null
+            authUser: null
         }
     },
     methods: {
@@ -52,12 +53,7 @@ export default {
                 this.authUser = null
             }
         })
-    },
-  firestore(){
-      return{
-        userInfo: db.collection('Users').doc(auth.currentUser.uid)
-      }
-  }
+    }
 
 }
 </script>

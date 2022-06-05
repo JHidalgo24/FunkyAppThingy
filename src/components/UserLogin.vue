@@ -6,8 +6,8 @@
             <h2 v-show="authUser === null">Sign-In</h2>
             <h2 v-show="authUser !== null">Sign-Out</h2>
             <v-card-text v-show="authUser === null">
-                <v-text-field v-model="user.email" label="Email" type="email"></v-text-field>
-                <v-text-field v-model="user.password" label="Password" type="password"></v-text-field>
+                <v-text-field v-model="userLogin.email" label="Email" type="email"></v-text-field>
+                <v-text-field v-model="userLogin.password" label="Password" type="password"></v-text-field>
                 <v-btn @click="loginWithEmail" class="ma-5" color="pink">Login</v-btn>
                 <br>
                 <router-link to="/password-reset">Forgot Password</router-link>
