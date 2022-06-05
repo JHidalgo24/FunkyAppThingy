@@ -13,7 +13,7 @@
     </v-app-bar>
 
     <v-main app>
-        <router-view></router-view>
+        <router-view  ></router-view>
     </v-main>
 
     <v-navigation-drawer right width="4rem" v-model="drawer" app temporary color="white">
@@ -55,19 +55,35 @@
 
 <script>
 import router from "@/routes";
+import {auth} from "@/firebase/firebase";
+import User from "@/models/User";
 
 export default {
   name: 'App',
   router,
   components: {
 
+
   },
   data(){
     return{
       isActive:true,
       drawer: null,
+      authUser:null
 
     }
+  },
+  methods:{
+
+  },
+  beforeCreate: async function () {
+    await auth.onAuthStateChanged(x => {
+      if (x) {
+        this.authUser = new User(x);
+      } else {
+        this.authUser = null
+      }
+    })
   }
 
 

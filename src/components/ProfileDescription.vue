@@ -1,10 +1,9 @@
 <template>
 <v-container>
   <v-card elevation="0">
-    <h2 class="text-center">Your Profile 🏳️‍⚧️</h2>
-
+    <h2 class="text-center">{{this.user}}</h2>
+    <v-btn @click="outputUser"></v-btn>
     <v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Asian-Girl-Woman-Avatar-Smile-Happy-Female-512.png"></v-img>
-
     <h3>Preference</h3>
     <p>Men & Women</p>
     <h3>Gender</h3>
@@ -25,8 +24,38 @@
 </template>
 
 <script>
+import {auth, db} from "@/firebase/firebase";
+import User from "@/models/User";
+
 export default {
-  name: "ProfileDescription"
+  name: "ProfileDescription",
+
+  data(){
+    return{
+      authUser:null,
+      user:null
+    }
+  },
+  methods:{
+    outputUser(){
+      console.log(this.user)
+    }
+  },
+  firestore:function (){
+    return{
+      user:db.collection('Users').doc(this.authUser.uid).get().then(c => {console.log(c.data())})
+    }
+  },
+  beforeCreate: async function () {
+    await auth.onAuthStateChanged(x => {
+      if (x) {
+        this.authUser = new User(x);
+      } else {
+        this.authUser = null
+      }
+    })
+  }
+
 }
 </script>
 

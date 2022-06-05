@@ -1,24 +1,61 @@
 <template>
     <v-row class="ma-5">
       <v-col cols lg="3" sm="12"></v-col>
-      <v-col cols lg="6" sm="12"><v-card class=" text-center"  elevation="0"  width="100%" >
-        <h2 >User Login</h2>
-        <v-card-text >
-          <v-text-field   label="Email" type="email"></v-text-field>
-          <v-text-field label="Password" type="password"></v-text-field>
-          <v-btn class="ma-5" color="pink">Login</v-btn>
+      <v-col cols lg="6" sm="12">
+        <v-card class=" text-center"  elevation="0"  width="100%" >
+        <h2 v-show="authUser === null">Sign-In</h2>
+          <h2 v-show="authUser !== null">Sign-Out</h2>
+        <v-card-text v-show="authUser === null" >
+          <v-text-field v-model="user.email" label="Email" type="email"></v-text-field>
+          <v-text-field v-model="user.password" label="Password" type="password"></v-text-field>
+          <v-btn @click="loginWithEmail" class="ma-5" color="pink">Login</v-btn>
           <br>
-          <a>Forgot Password</a>
+          <router-link to="/password-reset">Forgot Password</router-link>
         </v-card-text>
-      </v-card></v-col>
+          <v-card-text v-show="authUser !== null" >
+            <v-btn @click="logOut" class="ma-5" color="pink">Log Out</v-btn>
+          </v-card-text>
+      </v-card>
+      </v-col>
       <v-col cols lg="3" sm="12"></v-col>
 
     </v-row>
 </template>
 
 <script>
+import {auth} from "@/firebase/firebase";
+import User from "@/models/User";
 export default {
-  name: "UserLogin"
+  name: "UserLogin",
+  data(){
+    return{
+      user:{email:'',password:''},
+      authUser: null
+    }
+  },
+  methods:{
+    async loginWithEmail(){
+      await auth.signInWithEmailAndPassword(this.user.email,this.user.password)
+    },
+    async resetPassword(){
+      await auth.sendPasswordResetEmail()
+    },
+    async logOut(){
+      await auth.signOut()
+    }
+  },
+  beforeCreate: async function () {
+    await auth.onAuthStateChanged(x => {
+
+      if (x) {
+        this.authUser = new User(x);
+
+      } else {
+        this.authUser = null
+      }
+
+    })
+  }
 }
 </script>
 

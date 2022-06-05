@@ -6,6 +6,7 @@ import UserLogin from "@/components/UserLogin";
 import datingPage from "@/components/DatingPage";
 import ProfileDescription from "@/components/ProfileDescription";
 import UserAnalytics from "@/components/UserAnalytics";
+import ResetPassword from "@/components/ResetPassword";
 
 Vue.use(VueRouter);
 
@@ -16,7 +17,8 @@ let routes = [
     {path:'/login',component: UserLogin},
     {path:'/dating',component: datingPage},
     {path:'/profile',component: ProfileDescription},
-    {path: '/analytics', component: UserAnalytics}
+    {path: '/analytics', component: UserAnalytics},
+    {path:'/password-reset',component: ResetPassword}
 
 ]
 
