@@ -6,7 +6,7 @@
         <h2>Melody</h2>
       </a>
       <v-spacer></v-spacer>
-      <v-btn color="pink" dark @click.stop="drawer = !drawer" icon>
+      <v-btn v-if="this.authUser !== null" color="pink" dark @click.stop="drawer = !drawer" icon>
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
@@ -234,7 +234,7 @@
                 <v-card-text v-show="authUser === null">
                   <v-text-field v-model="userLogin.email" label="Email" type="email"></v-text-field>
                   <v-text-field v-model="userLogin.password" label="Password" type="password"></v-text-field>
-                  <v-btn @click="loginWithEmail" class="ma-5" color="pink">Login</v-btn>
+                  <v-btn @click="loginWithEmail" to="/" class="ma-5" color="pink">Login</v-btn>
                   <br>
                   <router-link to="/password-reset">Forgot Password</router-link>
                 </v-card-text>
@@ -247,7 +247,7 @@
         </v-row>
 
         <v-row>
-          <v-col cols lg="3" sm="12">
+          <v-col v-if="this.authUser === null" cols lg="3" sm="12">
             <v-card elevation="0" class="text-center">
               <h2>Not a Member Yet?</h2>
               <v-card-text>
