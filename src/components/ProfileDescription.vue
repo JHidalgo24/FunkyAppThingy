@@ -6,7 +6,7 @@
       <h3>Preference</h3>
       <p>{{userInfo.user.genderPreference === undefined ? 'Nothing Here': userInfo.user.genderPreference}}</p>
       <h3>Gender</h3>
-      <p>{{userInfo.user.genderPreference === undefined ? 'Nothing Here': userInfo.user.genderPreference}}</p>
+      <p>{{userInfo.user.gender === undefined ? 'Nothing Here': userInfo.user.gender}}</p>
       <h3>Favorite Genre</h3>
       <p>{{userInfo.user.favoriteGenre === undefined ? 'Nothing Here': userInfo.user.favoriteGenre}}</p>
       <h3>Favorite Artist</h3>
