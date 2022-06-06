@@ -12,7 +12,7 @@
     </v-app-bar>
 
     <v-main app>
-      <router-view :userID="authUser === null ? '12': null" :authUser="authUser" v-show="authUser !== null"></router-view>
+      <router-view :userID="authUser === null ? ' ': authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
       <div v-if="showSignUpOrLogin === false && authUser === null">
 <!--        <v-btn v-if="authUser === null" @click="signUp = !signUp"></v-btn>-->
 
