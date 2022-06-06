@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-parallax style="width: 100%; text-align: center;" height="400" src="https://wallpapercave.com/wp/wp6400060.jpg">
-      <h1 class="text-center">Welcome Back <br>{{userInfo.user.firstName === undefined ? 'Nothing Here': userInfo.user.firstName + ' ' + userInfo.user.lastName}}</h1>
+      <h1 class="text-center">Welcome Back <br>{{userInfo.user.firstName === undefined ? 'Nothing Here': userInfo.user.firstName }}</h1>
     </v-parallax>
     <v-container class="text-center">
 
