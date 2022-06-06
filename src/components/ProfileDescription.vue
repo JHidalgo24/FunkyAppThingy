@@ -1,7 +1,6 @@
 <template>
 <v-container>
     <v-card elevation="0">
-      <h1 class="text-center font-weight-bold font-italic">Welcome Back</h1>
       <h2 class="text-center">{{userInfo.user.firstName === undefined ? 'Nothing Here': userInfo.user.firstName + ' ' + userInfo.user.lastName}}</h2>
       <v-img src="https://cdn2.iconfinder.com/data/icons/people-flat-design/64/Asian-Girl-Woman-Avatar-Smile-Happy-Female-512.png"></v-img>
       <h3>Preference</h3>

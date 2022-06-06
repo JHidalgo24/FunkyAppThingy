@@ -267,7 +267,7 @@
       </div>
 
       <div v-show="showHome && authUser === null">
-        <home-page></home-page>
+        <home-page-page :auth-user="authUser"></home-page-page>
       </div>
 
     </v-main>
@@ -307,13 +307,13 @@ import router from "@/routes";
 import {auth, db} from "@/firebase/firebase";
 import User from "@/models/User";
 import {UserItem} from "@/models/UserItem";
-import homePage from "@/components/HomePage";
+import HomePagePage from "@/views/HomePagePage";
 
 export default {
   name: 'App',
   router,
   components: {
-      homePage
+    HomePagePage
 
   },
   data(){
