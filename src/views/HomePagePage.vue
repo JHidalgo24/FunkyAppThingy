@@ -1,9 +1,11 @@
 <template>
 <div>
-  <div v-show="authUser === null">
+  <div v-if="authUser === null">
     <home-page></home-page>
   </div>
-<welcome-back :userID="authUser.uid"></welcome-back>
+  <div v-else>
+    <welcome-back :userID="authUser.uid"></welcome-back>
+  </div>
 </div>
 </template>
 

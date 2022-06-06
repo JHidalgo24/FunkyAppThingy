@@ -240,7 +240,7 @@
                 <v-card-text v-show="authUser === null">
                   <v-text-field v-model="userLogin.email" label="Email" type="email"></v-text-field>
                   <v-text-field v-model="userLogin.password" label="Password" type="password"></v-text-field>
-                  <v-btn @click="loginWithEmail" to="/profile" class="ma-5" color="pink">Login</v-btn>
+                  <v-btn @click="loginWithEmail" to="/" class="ma-5" color="pink">Login</v-btn>
                   <br>
                   <router-link to="/password-reset">Forgot Password</router-link>
                 </v-card-text>
