@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar color="white" elevation="0" app>
       <a id="home-page" href="/" >
-          <v-icon class="rainbow_text_animated">mdi-heart</v-icon>
+        <v-icon class="rainbow_text_animated">mdi-heart</v-icon>
         <h2>Melody</h2>
       </a>
       <v-spacer></v-spacer>
@@ -209,7 +209,7 @@
                           </v-card-title>
                           <v-card-text>
                             <div class="text-right">
-                              <v-file-input class="" multiple label="Profile Images" prepend-icon="mdi-camera"></v-file-input>
+                              <v-file-input v-model="userImages" class="" multiple label="Profile Images" prepend-icon="mdi-camera"></v-file-input>
                             </div>
 
                           </v-card-text>
@@ -251,6 +251,8 @@
             </v-col>
             <v-col cols lg="3" sm="12"></v-col>
           </v-row>
+
+          <!--member/not member-->
           <v-row>
             <v-col v-if="this.authUser === null" cols lg="3" sm="12">
               <v-card elevation="0" class="text-center">
@@ -295,9 +297,9 @@
 
     </v-navigation-drawer>
     <v-footer class="text-center mt-12" app  absolute  color="black" dark>
-          <div>
-            <p>Personal Project</p>
-          </div>
+      <div>
+        <p>Personal Project</p>
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -335,6 +337,7 @@ export default {
         email: '',
         password: ''
       },
+      userImages:null,
       userInfo:[],
       showHome:true
 
