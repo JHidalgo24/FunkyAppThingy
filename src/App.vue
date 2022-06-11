@@ -306,7 +306,7 @@
 
 <script>
 import router from "@/routes";
-import {auth, db} from "@/firebase/firebase";
+import {auth, db,firebase} from "@/firebase/firebase";
 import User from "@/models/User";
 import {UserItem} from "@/models/UserItem";
 import HomePagePage from "@/views/HomePagePage";
@@ -354,7 +354,50 @@ export default {
       this.user.displayTrans = this.user.trans === 'No' ? 'N/A' : this.user.displayTrans
       await db.collection('Users').doc(auth.currentUser.uid).set({
         user: Object.assign({}, this.user)
+      }).catch(e => {
+        console.error(e)
       })
+
+      //example stolen
+      // Create a root reference
+      console.log('Adding image')
+      var storageRef = firebase.storage().ref();
+
+      var metadata = {
+        contentType: 'image/jpg',
+      }
+
+      // upload the file and metadata
+      var uploadTask = storageRef.child(this.user.uid).put(this.userImages ,metadata)
+
+      uploadTask.on('state_changed',
+          (snapshot) => {
+              // Observe state change events such as progress, pause, and resume
+              // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+              var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log('Upload is ' + progress + '% done');
+              switch (snapshot.state) {
+                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                  console.log('Upload is paused');
+                  break;
+                case firebase.storage.TaskState.RUNNING: // or 'running'
+                  console.log('Upload is running');
+                  break;
+              }
+          },
+          (error) => {
+              // handle unsuccessful uploads
+              console.log('stupid fucking error', error)
+          },
+          () => {
+              uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                console.log('file available at', downloadURL)
+              });
+          }
+      );
+
+
+      console.log('Adding image')
     },
     async loginWithEmail() {
       await auth.signInWithEmailAndPassword(this.userLogin.email, this.userLogin.password)
