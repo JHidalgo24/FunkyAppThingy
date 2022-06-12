@@ -32,61 +32,40 @@
                 <v-card elevation="0" class="mb-12" color="">
                     <v-form>
                         <v-container>
-                            <v-row>
-                                <v-col cols sm="12" lg="4">
+
                                     <v-text-field v-model="user.firstName" color="indigo darken-3" label="First Name" required></v-text-field>
-                                </v-col>
 
-                                <v-col cols sm="12" lg="4">
                                     <v-text-field v-model="user.lastName" color="indigo darken-3" label="Last Name" required></v-text-field>
-                                </v-col>
-                            </v-row>
 
-                            <v-row>
-                                <v-col cols sm="12" lg="6">
+
+
                                     <v-text-field v-model="user.age" type="number" color="indigo darken-3" label="Age" required></v-text-field>
-                                </v-col>
 
-                                <v-col cols sm="12" lg="6">
                                     <v-select v-model="user.gender" :items="items" label="Gender" required></v-select>
-                                </v-col>
-                            </v-row>
 
-                            <v-row>
-                                <v-col cols sm="12" lg="6">
+
+
                                     <v-select v-model="user.trans" :items="trans" label="Are you Trans?" required></v-select>
-                                </v-col>
 
-                                <v-col cols sm="12" lg="6">
                                     <v-alert class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="user.trans !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
                                     <v-select v-model="user.displayTrans" v-if="user.trans === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
-                                </v-col>
-                            </v-row>
 
-                            <v-row>
-                                <v-col cols sm="12" lg="6">
+
+
                                     <v-text-field v-model="user.email" color="indigo darken-3" type="email" label="E-mail" required></v-text-field>
-                                </v-col>
 
-                                <v-col cols class="d-inline-flex" sm="12" lg="6">
                                     <v-text-field v-model="user.phoneNumber" color="indigo darken-3" label="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></v-text-field>
-                                </v-col>
-                            </v-row>
 
-                            <v-row>
-                                <v-col cols sm="12" lg="12">
+
+
                                     <v-text-field color="indigo darken-3" v-model="user.password" type="password" label="Password" required></v-text-field>
-                                </v-col>
 
-                            </v-row>
 
-                            <v-row>
-                                <v-col>
+
                                     <v-btn height="50px" class="" color="green" width="100%">
                                         <v-icon>mdi-spotify</v-icon> Login
                                     </v-btn>
-                                </v-col>
-                            </v-row>
+
 
                         </v-container>
                     </v-form>
@@ -102,44 +81,31 @@
                 <v-card elevation="0" class="mb-12" color="">
                     <v-form>
                         <v-container>
-                            <v-row>
-                                <v-col cols>
-                                    <v-textarea v-model="user.bio" color="indigo darken-3" label="About Yourself" required></v-textarea>
-                                </v-col>
-                            </v-row>
 
-                            <v-row>
-                                <v-col>
+                                    <v-textarea v-model="user.bio" color="indigo darken-3" label="About Yourself" required></v-textarea>
+
+
+
                                     <v-text-field v-model="user.favoriteGenre" label="Favorite Music Genre"></v-text-field>
-                                </v-col>
-                                <v-col>
+
                                     <v-text-field v-model="user.favoriteArtist" label="Favorite Artist"></v-text-field>
-                                </v-col>
-                                <v-col>
+
                                     <v-select v-model="user.genderPreference" :items="genders" label="Preferred Dating Gender"></v-select>
-                                </v-col>
-                            </v-row>
+
 
                             <h5>Optional</h5>
-                            <v-row>
-                                <v-col>
+
                                     <v-text-field v-model="user.ethnicity" label="Ethnicity"></v-text-field>
-                                </v-col>
-                                <v-col>
+
                                     <v-text-field v-model="user.religion" label="Religion"></v-text-field>
-                                </v-col>
-                            </v-row>
-                            <v-row>
-                                <v-col>
+
+
                                     <v-text-field v-model="user.hatedGenres" label="Genres You Hate"></v-text-field>
-                                </v-col>
-                                <v-col>
+
                                     <v-text-field v-model="user.hatedArtist" label="Hated Artist"></v-text-field>
-                                </v-col>
-                                <v-col>
+
                                     <v-select v-model="user.agePreference" :items="agerange" label="Age Preference"></v-select>
-                                </v-col>
-                            </v-row>
+
                         </v-container>
                     </v-form>
                 </v-card>
@@ -157,7 +123,7 @@
                 <v-card elevation="0" class="mb-12" color="">
                     <v-form>
                         <v-container>
-
+                          This is for Spotify (Not Complete Yet)
                         </v-container>
                     </v-form>
                 </v-card>
@@ -169,6 +135,7 @@
                     Continue
                 </v-btn>
             </v-stepper-content>
+
 
             <v-stepper-content step="4">
                 <v-card elevation="0" class="mb-12" color="">

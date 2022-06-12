@@ -1,7 +1,7 @@
 <template>
 <div>
   <div v-if="authUser !== null">
-    <profile-description :userImgDwn="userImgDwn" :userID="authUser.uid" :authUser="authUser"></profile-description>
+    <profile-description  :userID="authUser.uid" :authUser="authUser"></profile-description>
   </div>
   <div v-else>
     loading
