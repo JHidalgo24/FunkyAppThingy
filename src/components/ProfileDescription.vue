@@ -13,7 +13,7 @@
             :show-arrows="false"
             interval="2400"
             progress
-            touch
+
             progress-color="rgb(67, 77, 127)"
         >
           <v-carousel-item
