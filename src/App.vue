@@ -360,16 +360,17 @@ export default {
 
       //example stolen
       // Create a root reference
-      console.log('Adding image')
+
       var storageRef = firebase.storage().ref();
 
       var metadata = {
         contentType: 'image/jpg',
       }
-      // upload the file and metadata
-      storageRef.child(auth.currentUser.uid).put(this.userImages[0] ,metadata)
 
-      console.log('Added image', this.userImages[0])
+      for (let i = 0; i < this.userImages.length; i++) {
+        storageRef.child(auth.currentUser.uid + '-'+ i).put(this.userImages[i] ,metadata)
+      }
+
     },
     async loginWithEmail() {
       await auth.signInWithEmailAndPassword(this.userLogin.email, this.userLogin.password)
