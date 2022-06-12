@@ -55,35 +55,24 @@
                   <v-card elevation="0" class="mb-12" color="">
                     <v-form>
                       <v-container>
-
                         <v-text-field v-model="user.firstName" color="indigo darken-3" label="First Name" required></v-text-field>
 
                         <v-text-field v-model="user.lastName" color="indigo darken-3" label="Last Name" required></v-text-field>
 
-
-
                         <v-text-field v-model="user.age" type="number" color="indigo darken-3" label="Age" required></v-text-field>
 
                         <v-select v-model="user.gender" :items="items" label="Gender" required></v-select>
-
-
 
                         <v-select v-model="user.trans" :items="trans" label="Are you Trans?" required></v-select>
 
                         <v-alert class="text-center" icon="mdi-gender-transgender" elevation="0" text color="rgb(67, 77, 127)" v-if="user.trans !== 'Yes'">If you are Trans, you will be given option to display it if you desire tagging your profile with a trans flag 🏳️‍⚧️</v-alert>
                         <v-select v-model="user.displayTrans" v-if="user.trans === 'Yes'" :items="dtrans" label="Display on Profile" required></v-select>
 
-
-
                         <v-text-field v-model="user.email" color="indigo darken-3" type="email" label="E-mail" required></v-text-field>
 
                         <v-text-field v-model="user.phoneNumber" color="indigo darken-3" label="Phone Number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></v-text-field>
 
-
-
                         <v-text-field color="indigo darken-3" v-model="user.password" type="password" label="Password" required></v-text-field>
-
-
 
                         <v-btn height="50px" class="" color="green" width="100%">
                           <v-icon>mdi-spotify</v-icon> Login
@@ -107,21 +96,17 @@
 
                         <v-textarea v-model="user.bio" color="indigo darken-3" label="About Yourself" required></v-textarea>
 
-
-
                         <v-text-field v-model="user.favoriteGenre" label="Favorite Music Genre"></v-text-field>
 
                         <v-text-field v-model="user.favoriteArtist" label="Favorite Artist"></v-text-field>
 
                         <v-select v-model="user.genderPreference" :items="genders" label="Preferred Dating Gender"></v-select>
 
-
                         <h5>Optional</h5>
 
                         <v-text-field v-model="user.ethnicity" label="Ethnicity"></v-text-field>
 
                         <v-text-field v-model="user.religion" label="Religion"></v-text-field>
-
 
                         <v-text-field v-model="user.hatedGenres" label="Genres You Hate"></v-text-field>
 
@@ -180,11 +165,17 @@
                               <v-file-input v-model="userImages" class="" multiple label="Profile Images" prepend-icon="mdi-camera"></v-file-input>
                             </div>
                           </v-card-text>
+                        </v-card>
 
+                        <v-card elevation="0">
+                          <v-alert border="top" colored-border type="warning" elevation="2">
+                            You need 4 images. Any more you add will not be used.
+                          </v-alert>
                         </v-card>
                       </v-container>
                     </v-form>
                   </v-card>
+
                   <v-btn color="gray" @click="e1 = 3">
                     Back
                   </v-btn>
@@ -197,6 +188,7 @@
             </v-stepper>
           </v-container>
         </div>
+
         <!-- Display if signed out and already a user -->
         <div class="ma-4" v-else-if="showSignUpOrLogin === true && authUser === null">
           <v-row class="ma-5">
@@ -211,6 +203,13 @@
                   <v-btn @click="loginWithEmail" to="/" class="ma-5" color="pink">Login</v-btn>
                   <br>
                   <router-link to="/password-reset">Forgot Password</router-link>
+
+                  <div v-if="showpasswordwrong === true">
+                    <v-alert dense outlined type="error">
+                      Incorrect Password
+                    </v-alert>
+                  </div>
+
                 </v-card-text>
                 <v-card-text v-show="authUser !== null">
                   <v-btn @click="logOut" class="ma-5" color="pink">Log Out</v-btn>
@@ -239,7 +238,6 @@
       <div v-show="showHome && authUser === null">
         <home-page-page :auth-user="authUser"></home-page-page>
       </div>
-
     </v-main>
 
     <v-navigation-drawer v-if="authUser !== null" right width="4rem" v-model="drawer" app temporary color="white">
@@ -267,7 +265,6 @@
     <v-footer class="text-center mt-12" app  absolute  color="black" dark>
       <div>
         <p>Personal Project</p>
-
       </div>
     </v-footer>
   </v-app>
@@ -307,7 +304,8 @@ export default {
       },
       userImages:null,
       userInfo:[],
-      showHome:true
+      showHome:true,
+      showpasswordwrong: false
     }
   },
   methods:{
@@ -340,7 +338,7 @@ export default {
 
     },
     async loginWithEmail() {
-      await auth.signInWithEmailAndPassword(this.userLogin.email, this.userLogin.password)
+      await auth.signInWithEmailAndPassword(this.userLogin.email, this.userLogin.password).catch(() => {this.showpasswordwrong = true})
     },
     async resetPassword() {
       await auth.sendPasswordResetEmail()
