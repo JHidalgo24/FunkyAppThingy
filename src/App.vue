@@ -390,7 +390,6 @@ export default {
         this.authUser = null
       }
     })
-    this.getImages()
   }
 
 
