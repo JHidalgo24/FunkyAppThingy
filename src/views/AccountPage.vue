@@ -11,15 +11,14 @@
 
 <script>
 import ProfileDescription from "@/components/ProfileDescription";
+import { firebase} from "@/firebase/firebase";
+
 export default {
   name: "AccountPage",
   components: {ProfileDescription},
   props: {
     authUser: {
       required: true
-    },
-    userImgDwn:{
-      required:true
     }
   }
 

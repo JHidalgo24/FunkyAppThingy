@@ -53,7 +53,7 @@
 
 <script>
 import {
-  auth, db
+  auth, db, firebase
 } from "@/firebase/firebase";
 import User from "@/models/User";
 
@@ -63,18 +63,24 @@ export default {
       userID:{
         required:true
       },
-      userImgDwn:{
-        required:true
-      }
   },
     data() {
         return {
             authUser: null,
             userInfo:[],
+            userImgDwn:[]
         }
     },
     methods: {
+      getImages(){
+        let storageRef = firebase.storage().ref();
 
+        for (let i = 0; i < 4; i++) {
+          storageRef.child(this.userID + '/' + i).getDownloadURL().then((url) => {
+            this.userImgDwn.push(url)
+          })
+        }
+      }
     },
     beforeCreate: async function () {
         await auth.onAuthStateChanged(x => {
@@ -84,12 +90,13 @@ export default {
                 this.authUser = null
             }
         })
+      this.getImages()
     },
 firestore:function() {
   return{
     userInfo: db.collection('Users').doc(this.userID)
   }
-}
+},
 
 }
 </script>

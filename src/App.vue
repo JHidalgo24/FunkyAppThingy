@@ -16,7 +16,7 @@
 
     <v-main app>
       <!-- Display if signed in -->
-      <router-view :userImg="userImgDwn" :userID="authUser === null ? ' ': authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
+      <router-view :userID="authUser === null ? ' ': authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
 
       <!-- Display if signed out -->
       <div v-show="!showHome"  >
@@ -317,7 +317,6 @@ export default {
   router,
   components: {
     HomePagePage
-
   },
   data(){
     return{
@@ -340,8 +339,7 @@ export default {
       },
       userImages:null,
       userInfo:[],
-      showHome:true,
-      userImgDwn:[]
+      showHome:true
     }
   },
   methods:{
@@ -382,15 +380,7 @@ export default {
     async logOut() {
       await auth.signOut()
     },
-    getImages(){
-      let storageRef = firebase.storage().ref();
 
-      for (let i = 0; i < 4; i++) {
-        storageRef.child(this.authUser.uid + '/' + i).getDownloadURL().then((url) => {
-          this.userImgDwn.push(url)
-        })
-      }
-    }
   },
   beforeCreate: async function () {
     await auth.onAuthStateChanged(x => {
