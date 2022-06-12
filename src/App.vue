@@ -368,7 +368,7 @@ export default {
       }
 
       for (let i = 0; i < this.userImages.length; i++) {
-        storageRef.child(auth.currentUser.uid + '-'+ i).put(this.userImages[i] ,metadata)
+        storageRef.child(auth.currentUser.uid + '/' + i).put(this.userImages[i] ,metadata)
       }
 
     },
