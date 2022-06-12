@@ -11,7 +11,6 @@
 
 <script>
 import ProfileDescription from "@/components/ProfileDescription";
-import { firebase} from "@/firebase/firebase";
 
 export default {
   name: "AccountPage",
