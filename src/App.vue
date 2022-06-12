@@ -16,7 +16,7 @@
 
     <v-main app>
       <!-- Display if signed in -->
-      <router-view :userID="authUser === null ? ' ': authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
+      <router-view :userImg="userImgDwn" :userID="authUser === null ? ' ': authUser.uid" :authUser="authUser" v-show="authUser !== null"></router-view>
 
       <!-- Display if signed out -->
       <div v-show="!showHome"  >
@@ -299,6 +299,7 @@
     <v-footer class="text-center mt-12" app  absolute  color="black" dark>
       <div>
         <p>Personal Project</p>
+
       </div>
     </v-footer>
   </v-app>
@@ -339,8 +340,8 @@ export default {
       },
       userImages:null,
       userInfo:[],
-      showHome:true
-
+      showHome:true,
+      userImgDwn:[]
     }
   },
   methods:{
@@ -361,14 +362,14 @@ export default {
       //example stolen
       // Create a root reference
 
-      var storageRef = firebase.storage().ref();
+      let storageRef = firebase.storage().ref();
 
-      var metadata = {
+      let metadata = {
         contentType: 'image/jpg',
       }
 
-      for (let i = 0; i < this.userImages.length; i++) {
-        storageRef.child(auth.currentUser.uid + '/' + i).put(this.userImages[i] ,metadata)
+      for (let i = 0; i < 4; i++) {
+        await storageRef.child(auth.currentUser.uid + '/' + i).put(this.userImages[i] ,metadata)
       }
 
     },
@@ -380,6 +381,15 @@ export default {
     },
     async logOut() {
       await auth.signOut()
+    },
+    getImages(){
+      let storageRef = firebase.storage().ref();
+
+      for (let i = 0; i < 4; i++) {
+        storageRef.child(this.authUser.uid + '/' + i).getDownloadURL().then((url) => {
+          this.userImgDwn.push(url)
+        })
+      }
     }
   },
   beforeCreate: async function () {
@@ -390,6 +400,7 @@ export default {
         this.authUser = null
       }
     })
+    this.getImages()
   }
 
 

@@ -16,7 +16,7 @@
             progress-color="rgb(67, 77, 127)"
         >
           <v-carousel-item
-              v-for="(slide, i) in slides"
+              v-for="(slide, i) in userImgDwn"
               :key="i"
           >
             <v-sheet
@@ -28,7 +28,7 @@
                   align="center"
                   justify="center"
               >
-<v-img src="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200"></v-img>
+              <v-img :src="slide"></v-img>
               </v-row>
             </v-sheet>
           </v-carousel-item>
@@ -62,19 +62,15 @@ export default {
   props:{
       userID:{
         required:true
+      },
+      userImgDwn:{
+        required:true
       }
   },
     data() {
         return {
             authUser: null,
             userInfo:[],
-
-          slides: [
-            'Image One',
-            'Image Two',
-            'Image Three',
-            'Image Four',
-          ],
         }
     },
     methods: {

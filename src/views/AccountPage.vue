@@ -1,7 +1,7 @@
 <template>
 <div>
   <div v-if="authUser !== null">
-    <profile-description :userID="authUser.uid" :authUser="authUser"></profile-description>
+    <profile-description :userImgDwn="userImgDwn" :userID="authUser.uid" :authUser="authUser"></profile-description>
   </div>
   <div v-else>
     loading
@@ -17,6 +17,9 @@ export default {
   props: {
     authUser: {
       required: true
+    },
+    userImgDwn:{
+      required:true
     }
   }
 
