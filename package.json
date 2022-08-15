@@ -14,7 +14,7 @@
     "vue-router": "^3.5.4",
     "vue-tailwind": "^2.5.1",
     "vuefire": "^2.2.5",
-    "vuetify": "^2.6.0"
+    "vuetify": "^2.6.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
